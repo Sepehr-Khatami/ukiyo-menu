@@ -59,13 +59,14 @@ export default function MenuEditor() {
 
   const handleCategoryChange = (
     catIndex: number,
-    key: string,
+    key: "categorie" | "description",
     value: string
   ) => {
     const updated = [...data];
     updated[catIndex][key] = value;
     setData(updated);
   };
+
 
   const handleSave = async () => {
     const res = await fetch("/api/save", {
