@@ -1,0 +1,56 @@
+[
+  {
+    "titleEn": "Coffee",
+    "titleFa": "قهوه",
+    "image": "/coffee.gif"
+  },
+  {
+    "titleEn": "Non-Coffee",
+    "titleFa": "بدون قهوه",
+    "image": "/hot-cocoa.gif"
+  },
+  {
+    "titleEn": "Herbal tea",
+    "titleFa": "دمنوش",
+    "image": "/tea.gif"
+  },
+  {
+    "titleEn": "Milk Shake",
+    "titleFa": "شیک و اسموتی",
+    "image": "/drink-cup.gif"
+  },
+  {
+    "titleEn": "Mocktail",
+    "titleFa": "ماکتل",
+    "image": "/beverage.gif"
+  },
+  {
+    "titleEn": "Desert",
+    "titleFa": "کیک و دسر",
+    "image": "/cake.gif"
+  },
+  {
+    "titleEn": "ّFries",
+    "titleFa": "سیب زمینی",
+    "image": "/french-fries.gif"
+  },
+  {
+    "titleEn": "Panini",
+    "titleFa": "پنینی",
+    "image": "/sandwich.gif"
+  },
+  {
+    "titleEn": "Burger",
+    "titleFa": "برگر",
+    "image": "/burger.gif"
+  },{
+    "titleEn": "Salad",
+    "titleFa": "سالاد",
+    "image": "/vegetarian.gif"
+  },
+{
+  "titleEn": "Pasta",
+  "titleFa": "پاستا",
+  "image": "/spaghetti.gif"
+}
+]
