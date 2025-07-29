@@ -6,7 +6,7 @@ import MenuItems from "./menu-items";
 import items from "@/data/menu-titles.json";
 import menuItems from "@/data/menu-items.json";
 
-const menuLengthArray = menuItems.map((item) => item.items.length * 300);
+const menuLengthArray = menuItems.map((item) => item.items.length * 350);
 
 export default function MenuTitle() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -44,6 +44,7 @@ export default function MenuTitle() {
                 <Image
                   src={item.image}
                   className='transform scale-150 bg-emerald-100 rounded-lg'
+                  unoptimized
                   width={50}
                   height={50}
                   alt='logo'

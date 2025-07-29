@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata,Viewport } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
@@ -8,11 +8,21 @@ const vazir = Vazirmatn({
   subsets: ["latin"],
   variable: "--font-vazir",
 });
+export const viewport: Viewport = {
+  themeColor: "#059669",
+};
+ 
 
 export const metadata: Metadata = {
   title: "کافه رستوران یوکیو",
   description:
     "منوی کامل کافه اوکیو. مشاهده انواع نوشیدنی، قهوه، کیک و خوراکی‌های جذاب.",
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/icon-512.png",
+  },
+  
   openGraph: {
     title: "منوی کافه اوکیو",
     description: "منوی کامل نوشیدنی‌ها و خوراکی‌های خوشمزه.",

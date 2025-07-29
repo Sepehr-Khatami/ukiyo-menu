@@ -10,7 +10,7 @@ export default function Home() {
       </div>
       
      </div>
-     <div className="mt-24 w-full px-4">
+     <div className="mt-24 w-full px-4 pb-16">
      
       <MenuTitle/>
      </div>
