@@ -5,15 +5,17 @@ type MenuItem = {
   notes?: string;
 };
 
+// console.log(menuLengthArray);
 export default function MenuItems({
-  category
+  category,
 }: {
-  openIndex: number | null;
-  isOpen: boolean;
   category: string;
+  
 }) {
-  const current = items.find((item ) => item.categorie === category);
+ 
+  const current = items.find((item) => item.categorie === category);
   if (!current) return null;
+  
 
   return (
     <div className={`flex flex-col px-8 gap-2 py-6`}>
@@ -22,7 +24,7 @@ export default function MenuItems({
           {current?.description}
         </div>
       )}
-      {current.items.map((item : MenuItem, index) => (
+      {current.items.map((item: MenuItem, index) => (
         <div key={index}>
           <div
             // key={index}
