@@ -1,7 +1,7 @@
 {
-  "name": "Ukiyo Café Menu",
+  "name": "Ukiyo Café",
   "short_name": "Ukiyo",
-  "description": "منوی کافه یوکیو برای مشاهده انواع نوشیدنی و خوراکی",
+  "description": "منوی کافه یوکیو",
   "lang": "fa",
   "start_url": "/",
   "display": "standalone",

@@ -1,12 +1,12 @@
 import type { Metadata,Viewport } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
-import { Suspense } from "react";
-import Loading from "./loading";
+
 
 const vazir = Vazirmatn({
   subsets: ["latin"],
   variable: "--font-vazir",
+  preload: true,
 });
 export const viewport: Viewport = {
   themeColor: "#059669",
@@ -16,16 +16,17 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "کافه رستوران یوکیو",
   description:
-    "منوی کامل کافه اوکیو. مشاهده انواع نوشیدنی، قهوه، کیک و خوراکی‌های جذاب.",
+    "منوی کامل کافه یوکیو. مشاهده انواع نوشیدنی، قهوه، کیک و غذاهای جذاب.",
   manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico",
     apple: "/icon-512.png",
+    shortcut: "/favicon.ico",
   },
   
   openGraph: {
-    title: "منوی کافه اوکیو",
-    description: "منوی کامل نوشیدنی‌ها و خوراکی‌های خوشمزه.",
+    title: "کافه یوکیو",
+    description: "منوی کامل نوشیدنی‌ها و غذاها.",
     url: "https://ukiyocafe.ir",
     siteName: "Ukiyo Café",
     images: [
@@ -40,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "منوی کافه اوکیو",
-    description: "منوی کامل نوشیدنی‌ها و خوراکی‌های خوشمزه.",
+    title: "کافه یوکیو",
+    description: "منوی کامل نوشیدنی‌ها و غذاها.",
     images: ["https://ukiyocafe.ir/og-image.png"],
   },
 };
@@ -56,7 +57,8 @@ export default function RootLayout({
       <body
         className={`${vazir.className} antialiased scroll-smooth bg-emerald-100`}
       >
-        <Suspense fallback={<Loading />}>{children}</Suspense>
+        {children}
+        
       </body>
     </html>
   );

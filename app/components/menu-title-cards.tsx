@@ -1,14 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import MenuItems from "./menu-items";
 import items from "@/data/menu-titles.json";
 import menuItems from "@/data/menu-items.json";
+import Skeleton from  "./imageSkeleton"
 
-const menuLengthArray = menuItems.map((item) => item.items.length * 350);
+const menuLengthArray = menuItems.map((item) => item.items.length * 150);
 
-export default function MenuTitle() {
+export default function MenuTitle() { 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   
 
@@ -41,14 +41,10 @@ export default function MenuTitle() {
             >
               <span className='flex-shrink'>{item.titleEn}</span>
               <div className='absolute left-1/2 -translate-x-1/2'>
-                <Image
-                  src={item.image}
-                  className='transform scale-150 bg-emerald-100 rounded-lg'
-                  unoptimized
-                  width={50}
-                  height={50}
-                  alt='logo'
-                />
+                <div className='h-18 w-18 rounded-lg overflow-hidden'>
+                  <Skeleton src={item.image} />
+                </div>
+                
               </div>
               <span className='flex-shrink'>{item.titleFa}</span>
             </div>
@@ -61,14 +57,14 @@ export default function MenuTitle() {
                     ? `${menuLengthArray[index]}px` // estimate ~80px per item
                     : "0px",
               }}
-            >
+            >              
               <MenuItems
-                category={item.titleFa}
-              />
+               category={item.titleFa} 
+               />
             </div>
           </div>
         );
-      })}
-    </div>
+      })}      
+    </div>    
   );
 }

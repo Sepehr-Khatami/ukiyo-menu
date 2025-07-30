@@ -43,14 +43,15 @@
     "titleEn": "Burger",
     "titleFa": "برگر",
     "image": "/burger.gif"
-  },{
+  },
+  {
+    "titleEn": "Pasta",
+    "titleFa": "پاستا",
+    "image": "/spaghetti.gif"
+  },
+  {
     "titleEn": "Salad",
     "titleFa": "سالاد",
     "image": "/vegetarian.gif"
-  },
-{
-  "titleEn": "Pasta",
-  "titleFa": "پاستا",
-  "image": "/spaghetti.gif"
-}
+  }
 ]
