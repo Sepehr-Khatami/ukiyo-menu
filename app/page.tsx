@@ -36,7 +36,7 @@ export default function Home() {
       <div className='mt-24 w-full px-4 pb-8'>
         <MenuTitle />
       </div>
-      <div className='text-sm text-center bg-emerald-100 py-4 flex flex-col justify-center items-center md:flex-row'>
+      <div className='text-xs text-center bg-emerald-100 py-4 flex justify-center items-center md:flex-row'>
         <div>© 2025 Ukiyo Café. Built by Sepehr.</div>
         <div className='pl-1'>
           For inquiries:{" "}
