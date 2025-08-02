@@ -44,22 +44,22 @@ export default function MenuTitle() {
                 <div className='h-18 w-18 rounded-lg overflow-hidden'>
                   <Skeleton src={item.image} />
                 </div>
-                
               </div>
               <span className='flex-shrink'>{item.titleFa}</span>
             </div>
 
             <div
-              className={`mb-2 transition-all duration-1000 ease-in-out overflow-hidden origin-top rounded-lg mt-6 bg-emerald-100`}
+              className={`mb-2 transition-[max-height] duration-700 ease-in-out overflow-hidden origin-top rounded-lg mt-6 bg-emerald-100`}
               style={{
                 maxHeight:
                   isOpen && menuLengthArray[index]
                     ? `${menuLengthArray[index]}px` // estimate ~80px per item
                     : "0px",
+                willChange : "max-height",
               }}
-            >              
-              <MenuItems
-               category={item.titleFa} 
+            >
+              <MenuItems 
+              category={item.titleFa}
                />
             </div>
           </div>
