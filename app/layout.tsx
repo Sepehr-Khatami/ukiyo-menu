@@ -1,7 +1,6 @@
-import type { Metadata,Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
-
 
 const vazir = Vazirmatn({
   subsets: ["latin"],
@@ -11,19 +10,30 @@ const vazir = Vazirmatn({
 export const viewport: Viewport = {
   themeColor: "#059669",
 };
- 
 
 export const metadata: Metadata = {
   title: "کافه رستوران یوکیو",
   description:
     "منوی کامل کافه یوکیو. مشاهده انواع نوشیدنی، قهوه، کیک و غذاهای جذاب.",
+  keywords: [
+    "کافه زنجان",
+    "کافه یوکیو",
+    "Ukiyo Cafe",
+    "ukiyocafe",
+    "ukiyocafe.ir",
+    "کافی شاپ زنجان",
+    "کافه",
+    "cafe",
+    "زنجان",
+  ],
+
   manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico",
     apple: "/icon-512.png",
     shortcut: "/favicon.ico",
   },
-  
+
   openGraph: {
     title: "کافه یوکیو",
     description: "منوی کامل نوشیدنی‌ها و غذاها.",
@@ -53,12 +63,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='fa'>
       <body
         className={`${vazir.className} antialiased scroll-smooth bg-emerald-100`}
       >
         {children}
-        
       </body>
     </html>
   );
