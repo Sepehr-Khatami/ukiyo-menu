@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
+import Head from "next/head";
 
 const vazir = Vazirmatn({
   subsets: ["latin"],
@@ -64,6 +65,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='fa'>
+      <Head>
+        <link rel='canonical' href='https://ukiyocafe.ir/' />
+      </Head>
       <body
         className={`${vazir.className} antialiased scroll-smooth bg-emerald-100`}
       >

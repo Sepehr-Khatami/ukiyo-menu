@@ -1,22 +1,83 @@
-'use client'
+"use client"
 
 import Image from "next/image";
 import MenuTitle from "./components/menu-title-cards";
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import Loading from "./loading";
 
 export default function Home() {
   const [hydrated, setHydrated] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+  const [open, setOpen] = useState(true);
 
   useEffect(() => {
     setHydrated(true);
-  }, []);
+    async function fetchMessage() {
+      const res = await fetch(
+        "https://raw.githubusercontent.com/Sepehr-Khatami/ukiyo-data/refs/heads/main/promotion.json?v=2"
+      );
+      const { message } = await res.json();
+      setMessage(message);
+    }
+    fetchMessage();
+  }, [message]);
 
   if (!hydrated) {
     return <Loading />;
   }
   return (
     <div className='max-w-[480px] w-full min-h-screen mx-auto bg-emerald-300 rounded-lg'>
+      {message && open && (
+        <dialog
+          dir='rtl'
+          className='w-screen h-screen flex justify-center items-center px-4 fixed m-0 bg-black/50 z-10'
+        >
+          <div className='flex flex-col items-center justify-center h-auto w-auto text-center bg-emerald-100 pt-10 pb-5 px-20 rounded-md'>
+            <span className='text-xl font-semibold'>
+              {message.split("&&").map((part, index) => {
+                let content = part;
+                let className = "text-black"; // default style
+
+                // Check for identifier at the start (e.g., p:promotion, t:title, m:message)
+                const match = part.match(/^([ptm]):(.*)/);
+                if (match) {
+                  const [, id, text] = match;
+                  content = text.trim();
+
+                  switch (id) {
+                    case "p":
+                      className = "text-green-500 font-bold"; // promotion style
+                      break;
+                    case "t":
+                      className = "text-blue-500 text-lg"; // title style
+                      break;
+                    case "m":
+                      className = "text-gray-700"; // message style
+                      break;
+                    default:
+                      className = "text-black"; // fallback
+                  }
+                }
+
+                return (
+                  <span key={index} className={className}>
+                    {content}
+                    {index < message.split("&&").length - 1 && <br />}
+                  </span>
+                );
+              })}
+            </span>
+
+            <button
+              onClick={() => setOpen(false)}
+              className='mt-4 px-4 py-2 bg-emerald-500 text-white font-bold text-xl rounded cursor-pointer'
+            >
+              باشه 👍
+            </button>
+          </div>
+        </dialog>
+      )}
+
       <div
         id='header'
         className='mx-auto min-h-[100px] bg-emerald-100 relative'
