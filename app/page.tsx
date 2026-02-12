@@ -84,7 +84,7 @@ export default function Home() {
       >
         <div className='h-28 w-28 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[.5rem]'>
           <Image
-            src='/logo green.png'
+            src='/logo green - 120.png'
             priority={true}
             width={100}
             height={100}
